@@ -1,0 +1,32 @@
+{
+  "books": [
+    {
+      "id": "1",
+      "title": "Lord of The Ring Ep-1",
+      "body": "The story begins in the quiet and peaceful Shire where the Hobbits live a life of comfort blissfully unaware of the rising darkness in the East. For sixty years the Ring has sat quietly in Bilbo Baggins pocket but as Sauron power grows the Ring begins to stir. On his birthday Bilbo departs the Shire leaving the Ring to his nephew Frodo. Gandalf the Grey a wise wizard returns years later to confirm his darkest fears. This is the One Ring of Power a vessel for Sauron cruelty and his desire to dominate all life. The journey begins in shadows. Frodo along with Samwise Gamgee and his cousins Merry and Pippin must flee the Shire as the Nazgul nine undead kings ride across the borders. They meet a mysterious Ranger known as Strider who guides them through the wilderness barely escaping the blades of the Ringwraiths at Weathertop where Frodo is wounded by a cursed Morgul blade. They reach the Elven magic of Rivendell where their pursuers are washed away and Frodo is saved from becoming a wraith.",
+      "description": "The Long-Expected Party",
+      "categories": ["Adventure", "Horror"]
+    },
+    {
+      "id": "2",
+      "title": "Lord of The Ring Ep-2",
+      "body": "In the beauty of Rivendell the fate of the world is debated by representatives of Elves Dwarves and Men. It is revealed that the Ring cannot be hidden or used for good as its very nature is to corrupt and betray its wielder. A Fellowship of nine is formed to take the Ring to the fires of Mount Doom. Their path leads them south into the bitter winter of the Misty Mountains. When the mountain pass defeats them they are forced into the subterranean nightmare of the Mines of Moria. In the deep dark they are besieged by thousands of Orcs and a Balrog a colossal demon of shadow and flame. Gandalf sacrifices himself to pull the demon into the abyss leaving the Fellowship devastated. They find peace in the Golden Wood of Lothlorien under Lady Galadriel who warns Frodo that the quest will claim his life. The episode ends in tragedy as Boromir falls to temptation and the Fellowship is finally broken during a brutal ambush by the Uruk hai.",
+      "description": "The Council of Elrond",
+      "categories": ["Adventure", "Horror"]
+    },
+    {
+      "id": "3",
+      "title": "Lord of The Ring Ep-3",
+      "body": "As Frodo and Sam wander the jagged rocks they capture the creature Gollum who has been twisted by the Ring over five hundred years into a murderous wreck. Frodo chooses to show him mercy hoping for redemption. They begin a grueling journey through the Dead Marshes where spectral faces flicker beneath the water. Simultaneously Aragorn Legolas and Gimli march into the kingdom of Rohan. They find a land in decay because the wizard Saruman the White has betrayed the world and poisoned the mind of King Theoden. Gandalf returns as Gandalf the White and heals the King leading the people to the ancient stone fortress of Helms Deep. In a night of blood and desperation ten thousand Uruk hai assault the walls. The tide is turned by the sudden arrival of cavalry and the unexpected help from the Ents living trees who march upon Isengard to exact vengeance for the destruction of their forests.",
+      "description": "The White Rider",
+      "categories": ["Adventure", "Horror"]
+    },
+    {
+      "id": "6175",
+      "title": "Lord of The Ring Ep-4",
+      "description": "The Siege of Gondor",
+      "categories": ["Adventure", "Horror"],
+      "body": "The shadow of Sauron grows longer as he turns his full military might toward the white city of Minas Tirith. This is the last bastion of hope for the world of Men. Aragorn realizing he must claim his birthright to inspire the people takes a ghostly path through the Mountains of the Dead to summon an army of spirits. On the Pelennor Fields a massive battle erupts featuring giant war elephants and soaring Nazgul. While the world burns in war Frodo and Sam endure a much quieter but more painful struggle. They are led by Gollum to the secret pass of Cirith Ungol. However Gollum betrays them leading Frodo into the lair of Shelob a monstrous ancient spider. Sam must show incredible bravery to save his master from the poison of the spider but they find themselves at the very doorstep of the Land of Shadow while Frodo is captured by Orcs."
+    }
+  ]
+}

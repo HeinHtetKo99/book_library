@@ -88,7 +88,7 @@ export default function Navbar() {
             </svg>
 
             <span className="text-xl md:text-2xl font-bold text-primary">
-              Book Store
+              Book Library
             </span>
           </Link>
 

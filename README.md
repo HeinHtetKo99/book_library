@@ -3,8 +3,6 @@
 A modern **Book Library web app** built with **React + Tailwind CSS + React Router + Firebase**.  
 Users can **create their own books**, **browse/search**, and **write personal notes** for reading progress and ideas.
 
-> Built for portfolio / junior developer interviews: clean UI, real authentication, real database, and practical CRUD features.
-
 ---
 
 ## ✨ Features

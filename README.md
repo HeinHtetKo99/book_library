@@ -1,16 +1,37 @@
-# React + Vite
+# Book Library 📚
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern **Book Library web app** built with **React + Tailwind CSS + React Router + Firebase**.  
+Users can **create their own books**, **browse/search**, and **write personal notes** for reading progress and ideas.
 
-Currently, two official plugins are available:
+> Built for portfolio / junior developer interviews: clean UI, real authentication, real database, and practical CRUD features.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 🔐 **Authentication** (Firebase Auth)
+  - Register / Login / Logout
+- 📚 **Book Management (CRUD)**
+  - Create your own books
+  - View book list / details
+  - Edit / delete 
+- 📝 **Notes**
+  - Add notes for a book / user
+  - Update and delete notes
+- 🔎 **Search**
+  - Search books by title 
+- 🌗 **UI**
+  - Responsive layout
+  - Optional dark mode (if you added it)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🧰 Tech Stack
+
+- **React** (Vite)
+- **Tailwind CSS**
+- **React Router**
+- **Firebase**
+  - Authentication
+  - Firestore Database
+  - (Optional) Storage

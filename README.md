@@ -1,8 +1,12 @@
+<<<<<<< HEAD
 ## 🌐 Live Demo
 - Demo: https://book-store-52e12.web.app/
 - Repository: https://github.com/HeinHtetKo99/book_library.git
 
 # 📚 Book Library
+=======
+# Book Library 📚
+>>>>>>> parent of 2af6be0 (Update README.md)
 
 A modern **Book Library web application** built with **React, Tailwind CSS, React Router, and Firebase**.  
 Users can **create and manage their own books**, **search through their library**, and **write personal notes**.
@@ -45,6 +49,7 @@ This project is designed as a **portfolio project** to demonstrate real-world fr
 - **Firebase**
   - Authentication
   - Firestore Database
+<<<<<<< HEAD
 
 ---
 
@@ -74,3 +79,6 @@ npm run dev
 The app will run locally at:
 
 http://localhost:5173
+=======
+  - (Optional) Storage
+>>>>>>> parent of 2af6be0 (Update README.md)

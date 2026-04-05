@@ -22,11 +22,11 @@ export default function Router() {
         },
         {
           path: "/create",
-          element: user ? <BookForm key="create" /> : <Navigate to={"/login"} />,
+          element: user ? <BookForm /> : <Navigate to={"/login"} />,
         },
         {
           path: "/edit/:id",
-          element: user ? <BookForm key="edit" /> : <Navigate to={"/login"} />,
+          element: user ? <BookForm /> : <Navigate to={"/login"} />,
         },
         {
           path: "/search",

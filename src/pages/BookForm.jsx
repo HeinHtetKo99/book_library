@@ -1,12 +1,4 @@
-import {
-  addDoc,
-  collection,
-  doc,
-  getDoc,
-  onSnapshot,
-  serverTimestamp,
-  updateDoc,
-} from "firebase/firestore";
+import { doc, onSnapshot } from "firebase/firestore";
 import React, { useContext, useEffect, useState } from "react";
 // import useFetch from '../hooks/useFetch';
 import { useNavigate, useParams } from "react-router-dom";
@@ -20,51 +12,53 @@ export default function BookForm() {
   let [description, setDescription] = useState("");
   let [categories, setCategories] = useState("");
   let [newCategories, setNewCategories] = useState([]);
-  let [isEdit, setIsEdit] = useState(false);
   let [file, setFile] = useState(null);
   let [preview, setPreview] = useState(null);
+  let [existingCoverUrl, setExistingCoverUrl] = useState(null);
+  let [formError, setFormError] = useState("");
   let [body, setBody] = useState("");
   let navigate = useNavigate();
-  let addCategory = (e) => {
+  let addCategory = () => {
     if (!categories.trim()) return;
     setNewCategories((prevState) => [categories, ...prevState]);
     setCategories("");
   };
   let { id } = useParams();
+  let isEdit = !!id;
   useEffect(() => {
-    if (id) {
-      setIsEdit(true);
-      let ref = doc(db, "books", id);
-      onSnapshot(ref, (doc) => {
-        let { title, categories, description, body } = doc.data();
-        setTitle(title);
-        setDescription(description);
-        setBody(body);
-        setNewCategories(categories);
-      });
-    } else {
-      setIsEdit(false);
-      setTitle("");
-      setDescription("");
-      setBody("");
-      setNewCategories([]);
-    }
+    if (!id) return;
+    let ref = doc(db, "books", id);
+    let unsub = onSnapshot(ref, (doc) => {
+      let { title, categories, description, body, cover } = doc.data() || {};
+      setTitle(title);
+      setDescription(description);
+      setBody(body);
+      setNewCategories(categories);
+      setExistingCoverUrl(cover || null);
+      setPreview(cover || null);
+    });
+    return () => unsub();
   }, [id]);
 
   // let {setPostData, data : book, loading} = useFetch('http://localhost:3001/books',"POST")
   let { updateDocument, addDocument } = useFirestore();
   let { user } = useContext(AuthContext);
-  let uploadToFirebase = async (file) => {
-    let fileName = Date.now().toString() + "_" + file.name;
-    let filePath = "/covers/" + user.uid + "/" + fileName;
+  let uploadToFirebase = async (fileToUpload) => {
+    let fileName = Date.now().toString() + "_" + fileToUpload.name;
+    let filePath = "covers/" + user.uid + "/" + fileName;
     let storageRef = ref(storage, filePath);
-    await uploadBytes(storageRef, file);
+    await uploadBytes(storageRef, fileToUpload);
     return await getDownloadURL(storageRef);
-
   };
   let submitForm = async (e) => {
     e.preventDefault();
-    let url = await uploadToFirebase(file);
+    setFormError("");
+    if (!user) return;
+    if (!file && !existingCoverUrl) {
+      setFormError("Please choose a cover image.");
+      return;
+    }
+    let url = file ? await uploadToFirebase(file) : existingCoverUrl;
     let data = {
       title,
       description,
@@ -134,6 +128,7 @@ export default function BookForm() {
             {!!preview && (
               <img src={preview} alt="" className="my-2 h-100 w-full" />
             )}
+            {!!formError && <p className="text-red-500 text-xs italic">{formError}</p>}
           </div>
         </div>
         <div className="flex flex-wrap -mx-3 mb-4">

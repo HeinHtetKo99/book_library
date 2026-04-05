@@ -1,0 +1,45 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function bookOwned(bookId) {
+      return exists(/databases/$(database)/documents/books/$(bookId)) &&
+        get(/databases/$(database)/documents/books/$(bookId)).data.uid == request.auth.uid;
+    }
+
+    match /books/{bookId} {
+      allow get, list: if isSignedIn() && resource.data.uid == request.auth.uid;
+
+      allow create: if isSignedIn() && request.resource.data.uid == request.auth.uid;
+
+      allow update: if isSignedIn() &&
+        resource.data.uid == request.auth.uid &&
+        request.resource.data.uid == resource.data.uid;
+
+      allow delete: if isSignedIn() && resource.data.uid == request.auth.uid;
+    }
+
+    match /notes/{noteId} {
+      allow get, list: if isSignedIn() && (resource.data.uid is string) && bookOwned(resource.data.uid);
+
+      allow create: if isSignedIn() &&
+        (request.resource.data.uid is string) &&
+        bookOwned(request.resource.data.uid);
+
+      allow update: if isSignedIn() &&
+        (resource.data.uid is string) &&
+        request.resource.data.uid == resource.data.uid &&
+        bookOwned(resource.data.uid);
+
+      allow delete: if isSignedIn() && (resource.data.uid is string) && bookOwned(resource.data.uid);
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
